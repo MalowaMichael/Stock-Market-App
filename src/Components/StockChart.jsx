@@ -1,30 +1,30 @@
 import {Line} from 'react-chartjs-2'
-import {Chart as 
-  ChartJs, 
-  CategoryScale, 
-  LinearScale, 
-  PointElement, 
-  LineElement, 
-  Title, 
-  Tooltip, 
+import {Chart as
+  ChartJs,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
   Legend
 } from 'chart.js'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 ChartJs.register(
-  CategoryScale, 
-  LinearScale, 
-  PointElement, 
-  LineElement, 
-  Title, 
-  Tooltip, 
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
   Legend
 )
 export const StockChart = () => {
   const [chartData, setChartData] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null >(null)
+  const [error, setError] = useState(null)
   useEffect(() => {
     const getStockData = async () => {
       try {
@@ -34,16 +34,15 @@ export const StockChart = () => {
         const response = await axios.get("https://yahoo-finance15.p.rapidapi.com/api/v1/markets/stock/quotes?ticker=AAPL%2CMSFT%2C%5ESPX%2C%5ENYA%2CGAZP.ME%2CSIBN.ME%2CGEECEE.NS", {
           headers :{
             "x-rapidapi-host": "yahoo-finance15.p.rapidapi.com",
-            "x-rapidapi-key": import.meta.vite.env.VITE_RAPIDAPI_KEY,
+            "x-rapidapi-key": import.meta.env.VITE_RAPIDAPI_KEY,
           }
         })
 
         console.log("The stocks retrieved are: ", response.data)
 
-        // data extraction from the response
         const stocks = response.data?.body;
-        
-        
+
+
         if(!stocks || stocks.length === 0){
           setError("No stocks data available");
           setLoading(false)
@@ -67,7 +66,7 @@ export const StockChart = () => {
         })
 
         setLoading(false)
-        
+
       } catch (error) {
         console.log("Error fetching stock data: ", error)
         setError("Failed to fetch stock data.")
