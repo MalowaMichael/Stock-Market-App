@@ -1,3 +1,22 @@
 @import "tailwindcss";
+html{
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;
+  overscroll-behavior: none;}
+#id{
+  color: lavender;
+  color: thistle;
+  color: orchid;
+  color: #E0B0FF;
+  color: #C8A2C8;
+  color: #C9A0DC;
+  color: #CCCCFF;
+  color: lavender;
+  color: lavender;
+  color: lavender;
+  color: lavender;
+  color: #890889;
 
-
+}

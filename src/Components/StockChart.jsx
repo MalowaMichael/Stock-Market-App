@@ -55,7 +55,7 @@ export const StockChart = () => {
             label:stockName,
             data:[stock.regularMarketPrice],
             borderColor:"blue",
-            backgroundColor:"indigo",
+            backgroundColor:"white",
           })
         })
 
