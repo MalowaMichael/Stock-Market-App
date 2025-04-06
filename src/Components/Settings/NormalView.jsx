@@ -25,7 +25,7 @@ export const NormalView = ({subTabSelected}) =>{
       transition={{duration:0.8, easings:"easeout"}}
     className="min-h-screen grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 ">
       {[...Array(14)].map((_, index) => (
-        <div key={index} className={`flex flex-col gap-4 ${lightMode ? "bg-white/80 shadow-sm" : "bg-gray-800"} p-2 h-30`}>
+        <div key={index} className={`flex flex-col gap-4 ${lightMode ? "bg-white/80 shadow-sm" : "bg-gray-800"} p-2 min-h-30`}>
           {settings[index] ? (
             <>
               <p className={`${lightMode ? "text-gray-500" : "text-white"} text-center font-bold `}>{settings[index].activity}</p>

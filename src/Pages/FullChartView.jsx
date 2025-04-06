@@ -25,10 +25,11 @@ export const FullChartView =({subTabSelected}) =>{
           whileInView={{opacity:1, x:0}}
           transition={{duration:0.8, easings:"easeout"}}
         className="flex flex-col gap-5 border-none border-white w-[93%] min-h-screen m-auto -z-10">
+      
       <div id="historical bar" className="flex flex-col gap-2 bg-transparent border-none border-white ">
         <p className={`text-2xl font-sm ${lightMode ? "text-gray-600" : "text-[cyan]"}`}>Historical Performance Timeline</p>
 
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap items-center gap-1">
           {historical_range.map((timespan) => (
               <div key={timespan.id} className={`${lightMode ? "bg-white/80" : " bg-gray-800"} text-green-400 text-md w-18 h-12 p-2 rounded-xs cursor-default ${lightMode ? "hover:ring-gray-400 hover:ring-offset-gray-400" : "hover:ring-offset-gray-700 hover:ring-gray-700"} hover:ring-2 hover:ring-offset-2 `}>{timespan.time}</div>
           ))}
@@ -41,8 +42,8 @@ export const FullChartView =({subTabSelected}) =>{
           
         
       </div>
-      <div id="index price" className={` ${lightMode ? "bg-white/80" : "bg-gray-800"} border-none border-white h-[50vh] overflow-y-auto`}>
-        <div className={` ${lightMode ? "text-gray-400 bg-white/80 font-medium text-xl" :"text-white font-medium text-xl"} flex justify-between p-4 sticky top-0 bg-gray-800`}>
+      <div id="index price" className={` ${lightMode ? "bg-white/80" : "bg-gray-800"} border-none border-white h-[50vh] overflow-y-auto mb-2`}>
+        <div className={` ${lightMode ? "text-gray-400 bg-white/80 " :"text-white"} font-medium sm:text-xl flex justify-between p-4 sticky top-0 bg-gray-800`}>
           <p>Index symbol</p>
           <p>Current price</p>
           <p>Margin</p>
@@ -50,9 +51,9 @@ export const FullChartView =({subTabSelected}) =>{
 
             {indices_data.map((index) => (
               <div className={`flex justify-between ${lightMode ? "bg-white/80" : "bg-gray-700"} my-2 p-4`}>
-                <p className={`${lightMode ? "text-gray-500" : "text-white"} font-medium text-[20px]`}>{index.symbol}</p>
-                <p className="text-green-400 font-medium text-[18px]">{index.current_value}</p>
-                <p className="text-[#ff5733] font-medium text-[18px]">{index.change}</p>
+                <p className={`${lightMode ? "text-gray-500" : "text-white"} font-medium md:text-[20px]`}>{index.symbol}</p>
+                <p className="text-green-400 font-medium md:text-[18px]">{index.current_value}</p>
+                <p className="text-[#ff5733] font-medium md:text-[18px]">{index.change}</p>
               </div>
             ))}
           

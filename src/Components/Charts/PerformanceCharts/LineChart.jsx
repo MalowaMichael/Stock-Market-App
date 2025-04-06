@@ -23,7 +23,7 @@ ChartJs.register(
   Legend,
 )
 export const LineChart = ({setChartSelected}) =>{
-  const {indices_data} = useStockContext()
+  const {indices_data, lightMode} = useStockContext()
   if(!indices_data)<p>Loading...</p>
   
   const dates = indices_data[0]?.data?.map(performance => performance.date) || []
@@ -117,7 +117,7 @@ export const LineChart = ({setChartSelected}) =>{
 
   return (
     <div className='relative w-full h-full group overflow-auto'>
-        <span className="absolute inset-0 bg-gray-700 scale-0 -z-10 rounded-[100%] transition-transform duration-1000 ease-out group-hover:scale-100 group-hover:rounded-none"></span>
+        <span className={`absolute inset-0 bg-gray-700 scale-0 -z-10 rounded-[100%] transition-transform duration-1000 ease-out ${lightMode ? "":"group-hover:scale-100"} group-hover:rounded-none`}></span>
         <Line options={options} data={data} className="relative z-10"/>
     </div>
   )

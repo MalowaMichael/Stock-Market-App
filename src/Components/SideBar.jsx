@@ -42,7 +42,7 @@ const sideTabs = [
 ]
 
 export const SideBar = ({setsubTabSelected, tabClicked, setTabClicked}) =>{
-  const {minimize, lightMode} = useStockContext()
+  const {minimize, sidebarOpen, lightMode} = useStockContext()
   const [clicked, setClicked] = useState(false)
   
   
@@ -61,7 +61,7 @@ export const SideBar = ({setsubTabSelected, tabClicked, setTabClicked}) =>{
   }
 
   return (
-    <div className={` sticky top-0 ${minimize ? "transform w-[5%] transition-all duration-800 ease-out overflow-x-auto": " w-[25%]"} ${lightMode ? "bg-white/80 transition-all duration-900 " : ""} h-screen overflow-y-auto bg-gray-800 p-2`}>
+    <div className={` sticky top-0 hidden lg:block ${sidebarOpen ? "z-10 block w-full m-auto bg-white/50":"hidden"} ${minimize ? "transform w-[5%] transition-all duration-800 ease-out overflow-x-auto": " w-[25%]"} ${lightMode ? "bg-white/80 transition-all duration-900 " : ""} h-screen overflow-y-auto bg-gray-800 p-2`}>
 
       {!minimize && (
         <div id="photo" className="flex flex-col items-center justify-center gap-5 border-none ">
@@ -89,7 +89,7 @@ export const SideBar = ({setsubTabSelected, tabClicked, setTabClicked}) =>{
                     className={` ${lightMode ? "text-gray-500": ""}text-gray-200 text-lg font-normal align-baseline cursor-pointer active:text-purple-700`}
                   >
               <div className="flex justify-between gap-5 ">
-                <p className={`h-6 w-6 ${lightMode ? "text-gray-600" : ""} text-gray-200 active:text-purple-700 translate-y-2`}>{tab.tabIcon}</p>
+                <p className={`h-6 w-6 ${lightMode ? "text-purple-700" : "text-gray-200"}  active:text-purple-700 translate-y-2`}>{tab.tabIcon}</p>
                 {!minimize && (
                   <p>{tab.tabName}</p>
                 )}

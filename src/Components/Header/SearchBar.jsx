@@ -42,11 +42,11 @@ export const SearchBar = () =>{
   }
   
   return (
-      <div>
-        <div id="middle" className="relative flex justify-between gap-2 bg-purple-700 rounded-sm border-none border-yellow-700  ">
-            <input value={searchQuery} ref={searchRef} onChange={handleSearch} className={`${lightMode ? "focus:border focus:border-gray-400" : ""} w-md rounded-tl-sm rounded-bl-sm bg-white outline-none p-2`} type="text" placeholder="Search here..."/>
-            <SlClose onClick={handleClear} className={`${clearBtn ? "block" : "hidden"} absolute left-[85%] translate-y-2 text-purple-700 cursor-default w-6 h-6 `}/>
-            <IoSearchCircleOutline onClick={handleFocus} className="rotate-90 h-8 w-8 translate-y-1 text-white/50" />
+      <div className=" ">
+        <div id="middle" className={`relative hidden md:flex justify-between gap-2 ${lightMode ? "bg-purple-700": "bg-[cyan]"} rounded-full `}>
+            <input value={searchQuery} ref={searchRef} onChange={handleSearch} className={`${lightMode ? "focus:border focus:border-gray-400" : ""} rounded-full md:w-md bg-white outline-none p-2`} type="text" placeholder="Search here..."/>
+            <SlClose onClick={handleClear} className={`${clearBtn ? "block" : "hidden"} absolute left-[85%] translate-y-2 ${lightMode ? "text-purple-700":""} cursor-default w-6 h-6 `}/>
+            <IoSearchCircleOutline onClick={handleFocus} className={`rotate-90 h-8 w-8 translate-y-1 ${lightMode ? "text-white/50":""}`} />
 
             
       </div> 

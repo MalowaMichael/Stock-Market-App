@@ -8,7 +8,8 @@ export const EditProfile = () =>{
     whileInView={{opacity:1, x:0}}
     transition={{duration:0.8, easings:"easeout"}}
 
-     className={`text-white w-[80%] m-auto border mb-5 ${lightMode ? "border-none bg-white/80 " : "border-white/30"} p-2`}>
+     className={`text-white md:w-[80%] m-auto border mb-5 ${lightMode ? "border-none bg-white/80 " : "border-white/30"} p-2`}>
+      
       <form action="">
         <section>
           <div className="flex flex-col gap-4">
@@ -47,7 +48,7 @@ export const EditProfile = () =>{
 
         </section>
 
-        <input type="submit" value="Save" className={`text-green-400 ${lightMode ? "bg-purple-700" : "bg-gray-500"} text-center text-[20px] font-medium w-[50%] ml-[25%] mr-[25%] p-2 mt-8 mb-2 cursor-pointer`}/>
+        <input type="submit" value="Save" className={`text-green-400 ${lightMode ? "bg-purple-700" : "bg-gray-500"} text-center md:text-[20px] font-medium w-[50%] ml-[25%] mr-[25%] p-2 mt-8 mb-2 cursor-pointer`}/>
       </form>
     </motion.div>
   )

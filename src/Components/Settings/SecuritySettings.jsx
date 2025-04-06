@@ -15,9 +15,9 @@ export const SecuritySettings = () =>{
     initial={{opacity:0, x:-250}}
       whileInView={{opacity:1, x:0}}
       transition={{duration:0.8, easings:"easeout"}}
-
     className="flex flex-col gap-4 mt-2">
-      <div className={`${lightMode ? "bg-white/80 shadow-md":"bg-gray-800"} p-4 w-[80%] m-auto`}>
+      
+      <div className={`${lightMode ? "bg-white/80 shadow-md":"bg-gray-800"} p-4 w-[96%] md:w-[80%] m-auto`}>
         <p className={`${lightMode ? "text-gray-600" : "text-white"} text-xl text-center font-bold mb-4`}>Track security events</p>
         <div className="grid grid-cols-4 gap-25 mb-2">
           <p className={`${lightMode ? "text-gray-600":"text-white"} text-md font-bold`}>Events</p>
@@ -36,7 +36,7 @@ export const SecuritySettings = () =>{
           ))}
       </div>
 
-      <div id="security quiz" className={`${lightMode ? "bg-white/80 shadow-md":"bg-gray-800"} p-4 w-[80%] m-auto`}>
+      <div id="security quiz" className={`${lightMode ? "bg-white/80 shadow-md":"bg-gray-800"} p-4 w-[96%] md:w-[80%] m-auto`}>
         <form action="" className="flex flex-col gap-4">
           <p className={`${lightMode ? "text-gray-600" :"text-white"} text-xl font-bold text-center`}>Set security quiz</p>
 
@@ -56,12 +56,11 @@ export const SecuritySettings = () =>{
         </form>
       </div>
 
-      <div id="delete account" className={`${lightMode ? "bg-white/80 shadow-md" : "bg-gray-800"}  p-4 mb-2 w-[80%] m-auto`}>
+      <div id="delete account" className={`${lightMode ? "bg-white/80 shadow-md" : "bg-gray-800"}  p-4 mb-2 w-[96%] md:w-[80%] m-auto`}>
         <p className="text-[#ff5733] text-center font-bold">Delete this account</p>
 
         <div className="text-white font-bold text-center p-2 rounded-md bg-[#ff5733] w-1/2 m-auto my-2 cursor-pointer  ">Delete</div>
       </div>
-
     </motion.div>
   )
 }
