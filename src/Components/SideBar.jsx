@@ -66,7 +66,7 @@ export const SideBar = ({setsubTabSelected, tabClicked, setTabClicked}) =>{
       {!minimize && (
         <div id="photo" className="flex flex-col items-center justify-center gap-5 border-none ">
           <img className="h-20 w-20 rounded-full " src="" alt="" />
-          <p className={`${lightMode ? "text-gray-600" :""}italic text-gray-200 text-center text-lg cursor-default`} onClick={() => setClicked(!clicked)}>Malowa Mike</p>
+          <p className={`${lightMode ? "text-gray-600" :""}italic text-gray-200 text-center text-lg cursor-default`} onClick={() => setClicked(!clicked)}>Jane Doe</p>
           <GoChevronDown className= {` text-xl ${lightMode ? "text-gray-700": ""} text-gray-200 transition-transform duration-300 ${clicked ? "rotate-180" : "rotate-0"}`}/>
           
       </div>
