@@ -20,8 +20,8 @@ export const StockContextProvider = (props) =>{
   const [lightMode, setLightMode] = useState(false)
   const [on, setOn] = useState(false)
   
-//toggle sidebar visibility
-const toggleSideBar = () =>{
+//toggle sidebar
+const toggleSidebar = () =>{
   setSidebarOpen(!sidebarOpen)
 }
   //toggling the themes
@@ -39,7 +39,7 @@ const toggleSideBar = () =>{
   const contextValue = {
     indices_data, stock_data, 
     minimize, setMinimize,
-    sidebarOpen, toggleSideBar, 
+    sidebarOpen, toggleSidebar, 
     lightMode, setLightMode,
     toggleThemeMode,
     on, setOn,

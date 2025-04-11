@@ -8,6 +8,7 @@ import { GoArrowLeft } from "react-icons/go";
 import { GoChevronRight } from "react-icons/go";
 import { GoChevronDown } from "react-icons/go";
 import { useStockContext } from "../Context/StockContext";
+import {easeIn, easeInOut, easeOut, motion} from 'framer-motion'
 
 const sideTabs = [
   {id: 0, tabIcon: <MdOutlineDashboardCustomize/>, tabName: "Dashboard", page: "Home", path: '/'},
@@ -42,16 +43,18 @@ const sideTabs = [
 ]
 
 export const SideBar = ({setsubTabSelected, tabClicked, setTabClicked}) =>{
-  const {minimize, sidebarOpen, lightMode} = useStockContext()
+  const {minimize, sidebarOpen, toggleSidebar, lightMode} = useStockContext()
   const [clicked, setClicked] = useState(false)
   
   
   const handlesubTabs = (sub) => {
-    setsubTabSelected(sub)    
+    setsubTabSelected(sub)  
+    toggleSidebar()  
   }
 
   const handleTabs = (tab) => {
     setTabClicked(tab)
+    toggleSidebar()
   }
 
   const navigate = useNavigate()  
@@ -61,7 +64,12 @@ export const SideBar = ({setsubTabSelected, tabClicked, setTabClicked}) =>{
   }
 
   return (
-    <div className={` sticky top-0 hidden lg:block ${sidebarOpen ? "z-10 block w-full m-auto bg-white/50":"hidden"} ${minimize ? "transform w-[5%] transition-all duration-800 ease-out overflow-x-auto": " w-[25%]"} ${lightMode ? "bg-white/80 transition-all duration-900 " : ""} h-screen overflow-y-auto bg-gray-800 p-2`}>
+    <motion.div 
+      initial={{opacity:0, x:-250}}
+      whileInView={{opacity:1, x:0}}
+      transition={{duration:0.5, ease:easeIn, easings: easeOut}}
+      
+      className={`fixed h-screen overflow-y-auto md:sticky md:top-0  ${sidebarOpen ? "block w-[80%] ":" hidden lg:block"} ${minimize ? "transform w-[5%] transition-all duration-800 ease-out overflow-x-auto": " md:w-[25%]"} ${lightMode ? "bg-white/80 transition-all duration-900 " : ""} bg-gray-800 z-20 pt-4 p-2`}>
 
       {!minimize && (
         <div id="photo" className="flex flex-col items-center justify-center gap-5 border-none ">
@@ -127,18 +135,17 @@ export const SideBar = ({setsubTabSelected, tabClicked, setTabClicked}) =>{
       ))} 
 
       {tabClicked !== "Dashboard" && (
-          <div onClick={handleBack} className={`${minimize ? "w-full" : ""} ${lightMode ? "text-white bg-purple-700" : "text-[cyan] bg-gray-500"} flex gap-5 cursor-pointer  rounded-sm mt-40 m-auto border p-1 `}>
+          <div onClick={handleBack} className={`${minimize ? "w-full" : ""} ${lightMode ? "text-white bg-purple-700" : "text-[cyan] bg-gray-500"} flex gap-5 cursor-pointer  rounded-sm m-auto border p-1 `}>
             {!minimize && (
               <GoArrowLeft className=" text-2xl font-bold"/>
 
             ) }
-
             <p className=" align-baseline ">Back</p>
           </div>        
       )}   
   </div>     
 
       
-   </div>
+   </motion.div>
   )
 }

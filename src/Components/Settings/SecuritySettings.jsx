@@ -15,7 +15,7 @@ export const SecuritySettings = () =>{
     initial={{opacity:0, x:-250}}
       whileInView={{opacity:1, x:0}}
       transition={{duration:0.8, easings:"easeout"}}
-    className="flex flex-col gap-4 mt-2">
+    className="flex flex-col gap-4 mt-2 min-h-screen">
       
       <div className={`${lightMode ? "bg-white/80 shadow-md":"bg-gray-800"} p-4 w-[96%] md:w-[80%] m-auto`}>
         <p className={`${lightMode ? "text-gray-600" : "text-white"} text-xl text-center font-bold mb-4`}>Track security events</p>

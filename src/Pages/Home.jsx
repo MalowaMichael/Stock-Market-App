@@ -52,7 +52,7 @@ import {motion} from 'framer-motion'
         
             
 
-            <div id="indices" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 border-none border-white w-[94%] m-auto overflow-x-auto">
+            <div id="indices" className="grid grid-cols-2 md:grid-cols-4 gap-5 border-none border-white w-[94%] m-auto overflow-x-auto">
                 {indices_data.slice(0, 4).map((index) => (
                     <Indexcard key={index.symbol} index={index}/>
                 ))}

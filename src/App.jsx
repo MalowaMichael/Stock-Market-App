@@ -22,10 +22,10 @@ function App() {
 
   return (
       <BrowserRouter>
-      <div className={` md:flex gap-5 ${lightMode ? "bg-gray-200 transition-all duration-900 transition-ease-in-out": "bg-black"}`}>
+      <div className={`mt-16 md:flex gap-5 ${lightMode ? "bg-gray-200 transition-all duration-900 transition-ease-in-out": "bg-black"}`}>
         <SideBar setsubTabSelected={setsubTabSelected} tabClicked={tabClicked} setTabClicked={setTabClicked} />
         
-        <div className="flex-1 border-none border-white">          
+        <div className=" flex-1 border-none border-white">          
           <Header />
           <Routes>
             <Route path="/" element={<Home subTabSelected={subTabSelected} setTabClicked={setTabClicked} />} />

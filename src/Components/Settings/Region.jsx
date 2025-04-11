@@ -8,7 +8,7 @@ export const Region = () =>{
     initial={{opacity:0, x:-250}}
       whileInView={{opacity:1, x:0}}
       transition={{duration:0.8, easings:"easeout"}}
-    className="">
+    className="min-h-screen">
       <form action="" className={`flex flex-col gap-5 ${lightMode ? "bg-white/80 shadow-md" : "bg-gray-800"} mt-2 w-[80%] m-auto p-4`}>
         <p className={`${lightMode ? "text-gray-600" : "text-white"} font-bold text-center text-[cyan] mb-2`}>Regional information</p>
         <div className="grid grid-cols-2 gap-4">

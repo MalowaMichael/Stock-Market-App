@@ -10,7 +10,7 @@ import { useStockContext } from "../../Context/StockContext";
 import { IoSearchCircleOutline } from "react-icons/io5";
 
 export const Header = () => {
-  const {minimize, toggleSideBar, setMinimize, lightMode, toggleThemeMode} = useStockContext() 
+  const {minimize, toggleSidebar, setMinimize, lightMode, toggleThemeMode} = useStockContext() 
 
 
   const handleMinimize = () =>{
@@ -20,10 +20,11 @@ export const Header = () => {
   
 
   return (
-    <div className={` border-b md:border-none border-white ${lightMode ? "bg-white/80" : "bg-black"} h-[70px] flex-1 py-4 sticky top-0 flex justify-between md:gap-[5%] md:px-8 z-10 `}>
+    <div className={`fixed z-20 top-0 left-0 right-0 h-[70px] flex-1 py-4 flex justify-between border-b md:border-none border-white ${lightMode ? "bg-white/80" : "bg-black"}  md:gap-[5%] md:px-8 `}>
+      
       <div id="left" className="border-none border-white w-[20%] md:w-[10%] flex justify-between">
         <IoReorderThreeOutline onClick={handleMinimize} className={` hidden md:block h-7 w-7 ${lightMode ? "text-purple-700" : "text-[cyan]"} rounded-full active:ring-gray-800  hover:transition-all hover:duration-300 hover:ring-6 hover:ring-gray-800 hover:ring-offset-2 hover:ring-offset-gray-800`} />
-        <IoReorderThreeOutline id="open side bar" onClick={toggleSideBar} className="h-7 w-7 text-[cyan] block md:hidden "/>
+        <IoReorderThreeOutline id="open side bar" onClick={toggleSidebar} className={`h-7 w-7 ${lightMode ? "text-purple-700":"text-[cyan]"} block md:hidden`}/>
         <Link to={'/faq'}>
           <IoHelpCircleOutline className={`h-7 w-7 ${lightMode ? "text-purple-700" : "text-[cyan]"} rounded-full active:ring-gray-800  hover:transition-all hover:duration-300 hover:ring-6 hover:ring-gray-800 hover:ring-offset-2 hover:ring-offset-gray-800`}/>
 

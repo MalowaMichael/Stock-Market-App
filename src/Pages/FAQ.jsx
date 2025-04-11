@@ -24,7 +24,7 @@ export const FAQ = () => {
       initial={{opacity:0, x:-250}}
       whileInView={{opacity:1, x:0}}
       transition={{duration:0.8, easings:"easeout"}}
-      className="flex flex-col gap-5 w-[100%] md:w-[94%] m-auto mt-5 mb-5">
+      className="flex flex-col gap-5 w-[100%] min-h-screen md:w-[94%] m-auto mt-5 mb-5">
       <p className={` md:text-lg font-bold text-center ${lightMode ? " text-gray-600 bg-white/80 shadow-md": "bg-gray-700 text-white"} cursor-default sticky top-0 w-[96%] md:w-[80%] m-auto p-4`}>
         Frequently Asked Questions
       </p>
